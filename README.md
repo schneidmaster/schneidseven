@@ -1,6 +1,6 @@
 # schneidseven
 
-The theme for my [blog](http://blog.schneidmaster.com/), based on [Casper](https://github.com/TryGhost/Casper).
+The theme for my [blog](http://blog.schneidmaster.com/), based on the codebase of [Casper](https://github.com/TryGhost/Casper).
 
 ## Copyright & License
 

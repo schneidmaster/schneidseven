@@ -1,38 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{! Document Settings }}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{! Page Meta }}
     <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{! Viewport mobile tag for sensible mobile support }}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    {{! Meta }}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="I'm a computer science major and web developer; I'm passionate about web development and strive for excellence in the craft." />
+    <meta name="keywords" content="Schneidmaster, Zach, Schneider, web, development, design, website, troubleshooting, Cedarville, Xenia, Springfield, Yellow, Springs, Dayton, Ohio" />
 
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic|Open+Sans:700,400" />
+    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    {{! Favicon }}
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
 
-    {{! Everything else gets inserted here }}
-    {{{body}}}
+    {{! Navigation }}
 
-    <footer class="site-footer">
-        <a class="subscribe icon-feed" href="{{@blog.url}}/rss/"><span class="tooltip">Subscribe!</span></a>
-        <div class="inner">
-             <section class="copyright">All content copyright <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
-             <section class="poweredby">Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a></section>
+    <div class="top-bar-wrapper"> 
+        <nav class="top-bar" data-topbar>
+            <ul class="title-area">
+                {{!  Title Area }}
+                <li class="name">
+                    <h1>
+                        <a href="/">
+                            Zach Schneider
+                        </a>
+                    </h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+            </ul>
+
+            <section class="top-bar-section">
+                {{!  Right Nav Section }}
+                <ul class="right">
+                    <li class="divider"></li>
+                    <li><a href="http://schneidmaster.com/">Home</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://schneidmaster.com/about">About</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://schneidmaster.com/projects">Projects</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/">Blog</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://schneidmaster.com/contact">Contact</a></li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+
+    {{! End Top Bar }}
+
+    {{! Everything else gets inserted here }}
+    <div class="row row-first">
+        <div class="large-12 columns">
+            {{{body}}}
+        </div>
+    </div>
+
+    {{! Footer }}
+ 
+    <footer class="row">
+        <div class="large-12 columns"><hr>
+
+            <div class="row">
+
+            <div class="large-8 columns">
+                <p>
+                    &copy; Zach Schneider 2014. Proudly published with <a class="icon-ghost" href="https://ghost.org">Ghost</a>.  
+                </p>
+            </div>
+
+            <div class="large-4 small-12 columns">
+                <a class="subscribe icon-feed right" href="{{@blog.url}}/rss/"></a>
+            </div>
+
+            </div>
         </div>
     </footer>
+ 
+    {{! End Footer }}
 
     {{! Ghost outputs important scripts and data with this tag }}
     {{ghost_foot}}

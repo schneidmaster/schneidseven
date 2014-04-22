@@ -1,0 +1,33 @@
+// App custom colors
+@import "colors";
+
+.top-bar-wrapper {
+    border-bottom: solid $blue 1px;
+    margin-bottom: 1.5em;
+}
+
+.center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.blue {
+    color: $blue;
+}
+
+.name h1, h1.tag-header {
+    color: $darkblue;
+    font-family: "Raleway", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+h1.tag-header {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    color: $orange;
+    font-family: "Satisfy", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}

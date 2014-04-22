@@ -1,0 +1,122 @@
+.blog-logo img {
+    height: 100px;
+}
+
+.blog-header p {
+    margin-left: -10px;
+    font-family: "Raleway", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    color: $darkblue;
+}
+
+.post {
+    margin-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
+    border-bottom: $lightgray 1px solid;
+    word-break: break-word;
+    hyphens: auto;
+
+    h2 {
+        font-family: "Raleway", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+        color: $darkblue;
+    }
+}
+
+/* Add a little circle in the middle of the border-bottom on our .post
+   just for the lolz and stylepoints. */
+.post:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: $blue 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #fff;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: #fff 0 0 0 5px;
+}
+
+.share {
+    margin-top: 1.8em;
+
+    a {
+        font-size: 1.8rem;
+        display: inline-block;
+        color: #BBC7CC;
+        text-decoration: none;
+        margin-left: 0.25em;
+    }
+}
+
+/* The subscribe icon on the footer */
+.subscribe:before {
+    color: $orange;
+}
+
+/* The main wrapper for our pagination links */
+.pagination {
+    position: relative;
+    margin: 2em auto;
+    font-size: 1.3rem;
+    color: $blue;
+    text-align: center;
+}
+
+.pagination a {
+    color: #9EABB3;
+}
+
+/* Push the previous/next links out to the left/right */
+.older-posts,
+.newer-posts {
+    position: absolute;
+    display: inline-block;
+    padding: 0 15px;
+    border: #EBF2F6 2px solid;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: border ease 0.3s;
+}
+
+.older-posts {
+    right: 0;
+}
+
+.page-number {
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.newer-posts {
+    left: 0;
+}
+
+.older-posts:hover,
+.newer-posts:hover {
+    border-color: #9EABB3;
+}
+
+h2.post-title {
+    color: $orange;
+}
+
+.post-meta {
+    color: $blue;
+
+    a {
+        text-decoration: underline;
+    }
+
+}
+
+.post-content {
+    h2, h3 {
+        font-size: 1.5em;
+        color: $darkblue;
+    }
+}
