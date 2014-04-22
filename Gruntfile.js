@@ -28,12 +28,10 @@ module.exports = function(grunt) {
 
         concat: {
             'assets/js/build.js': [
+                'assets/vendor/jquery/dist/jquery.js'
                 'assets/vendor/foundation/js/foundation.js',
                 'assets/js/jquery.fitvids.js',
                 'assets/js/index.js'
-            ],
-            'jquery.min.js': [
-                'assets/vendor/jquery/dist/jquery.min.js'
             ]
         },
 
