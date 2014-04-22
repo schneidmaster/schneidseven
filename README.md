@@ -1,6 +1,6 @@
-# Casper
+# schneidseven
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/).
+The theme for my [blog](http://blog.schneidmaster.com/), based on [Casper](https://github.com/TryGhost/Casper).
 
 ## Copyright & License
 
