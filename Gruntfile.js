@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                 'assets/js/index.js'
             ],
             'jquery.min.js': [
-                'assets/vendor/jquery/dist/jquery/min.js'
+                'assets/vendor/jquery/dist/jquery.min.js'
             ]
         },
 
