@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                     // sourcemap: true
                 },
                 files: {
-                    '<%= paths.css %>/screen.css': '<%= paths.scss %>/app.scss'
+                    '<%= paths.css %>/style.css': '<%= paths.scss %>/app.scss'
                 }
             }
         },
