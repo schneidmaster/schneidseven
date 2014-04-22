@@ -26,14 +26,6 @@ module.exports = function(grunt) {
             }
         },
 
-        concat: {
-            'assets/js/build.js': [
-                'assets/vendor/foundation/js/foundation.js',
-                'assets/js/jquery.fitvids.js',
-                'assets/js/index.js'
-            ]
-        },
-
         copy: {
             main: {
                 files: [
@@ -41,6 +33,7 @@ module.exports = function(grunt) {
                     {expand: true, src: ['assets/fonts/**'], dest: 'build/'},
                     {expand: true, src: ['assets/images/**'], dest: 'build/'},
                     {expand: true, src: ['assets/js/**'], dest: 'build/'},
+                    {src: ['assets/vendor/foundation/js/foundation.js'], dest: 'build/'},
                     {expand: true, src: ['partials/**'], dest: 'build/'},
                     {expand: true, src: ['scss/**'], dest: 'build/'},
                     {expand: true, src: ['*', '!.gitignore', '!.DS_Store'], dest: 'build/'}
@@ -74,12 +67,11 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['concat', 'sass:admin']);
-    grunt.registerTask('bundle', ['concat', 'clean:pre', 'copy:main', 'compress', 'copy:archive', 'clean:post']);
+    grunt.registerTask('default', ['sass:admin']);
+    grunt.registerTask('bundle', ['clean:pre', 'copy:main', 'compress', 'copy:archive', 'clean:post']);
 };

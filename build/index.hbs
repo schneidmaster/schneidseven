@@ -3,7 +3,16 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-{{> header}}
+<div class="row blog-header">
+    <div class="large-2 push-3 columns">
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+    </div>
+    <div class="large-4 pull-3 columns">
+        <h2>{{@blog.title}}</h2>
+        <p>{{@blog.description}}</p>
+    </div>
+</div>
+<hr>
 
 {{! Each post will be output using this markup }}
 {{#foreach posts}}

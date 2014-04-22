@@ -114,6 +114,18 @@ h2.post-title {
 
 }
 
+@media only screen and (max-width:40.063em) {
+
+    .post-header>div {
+        text-align: center;
+
+        .right {
+            float: none !important;
+        }
+    }
+
+}
+
 .post-content {
     h2, h3 {
         font-size: 1.5em;

@@ -4901,12 +4901,6 @@ h2.post-title {
   .post-meta a {
     text-decoration: underline; }
 
-@media only screen and (max-width: 40.063em) {
-  .post-header > div {
-    text-align: center; }
-    .post-header > div .right {
-      float: none !important; } }
-
 .post-content h2, .post-content h3 {
   font-size: 1.5em;
   color: #336699; }

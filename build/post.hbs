@@ -3,19 +3,28 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-{{> header}}
+<div class="row blog-header">
+    <div class="large-2 push-3 columns">
+        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+    </div>
+    <div class="large-4 pull-3 columns">
+        <h2>{{@blog.title}}</h2>
+        <p>{{@blog.description}}</p>
+    </div>
+</div>
+<hr>
 
 <article class="{{post_class}}">
 
     {{! Everything inside the #post tags pulls data from the post }}
     {{#post}}
 
-        <div class="row post-header">
-            <div class="large-8 medium-8 small-12 columns">
+        <div class="row">
+            <div class="large-8 medium-6 columns">
                 <span class="post-meta">Posted <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="in " separator=" | "}}</span>
                 <h2 class="post-title">{{{title}}}</h2>
             </div>
-            <div class="large-4 medium-4 small-12 columns">
+            <div class="large-4 medium-6 columns">
                 <section class="share">
                     <a class="icon-google-plus right" href="https://plus.google.com/share?url={{url absolute="true"}}"
                        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
