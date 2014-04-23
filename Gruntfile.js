@@ -54,6 +54,14 @@ module.exports = function(grunt) {
             }
         },
 
+        cssmin: {
+            build: {
+                files: {
+                    '<%= paths.built %>/style.min.css': '<%= paths.built %>/style.css'
+                }
+            }
+        },
+
         sass: {
             build: {
                 files: {
@@ -93,12 +101,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-shell');
 
-    grunt.registerTask('default', ['shell:bower', 'concat', 'sass']);
-    grunt.registerTask('prod', ['shell:bower', 'concat', 'sass', 'uglify']);
+    grunt.registerTask('default', ['shell:bower', 'sass', 'concat']);
+    grunt.registerTask('prod', ['shell:bower', 'concat', 'sass', 'uglify', 'cssmin']);
     grunt.registerTask('bundle', ['shell:bower', 'concat', 'sass', 'uglify', 'clean:pre', 'copy:main', 'compress', 'copy:archive', 'clean:post']);
 };
