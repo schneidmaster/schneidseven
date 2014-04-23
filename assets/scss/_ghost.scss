@@ -114,6 +114,20 @@ h2.post-title {
 
 }
 
+@media only screen and (max-width: 500px) {
+
+    .older-posts,
+    .newer-posts {
+        position: static;
+        margin: 10px 0;
+    }
+
+    .page-number {
+        display: block;
+    }
+
+}
+
 @media only screen and (max-width:40.063em) {
 
     .post-header>div {
