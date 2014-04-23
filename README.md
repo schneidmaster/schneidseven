@@ -2,6 +2,17 @@
 
 The theme for my [blog](http://blog.schneidmaster.com/), based on the codebase of [Casper](https://github.com/TryGhost/Casper).
 
+To get started:
+
+`cd your/ghost/directory`
+`cd content/themes`
+`git clone git@github.com:schneidmaster/schneidseven.git`
+`cd schneidseven`
+`npm install`
+`grunt prod`
+
+Restart your server (if you're using Passenger, `cd` to your Ghost directory again and `touch tmp/restart.txt`) and the theme should appear in the Ghost admin settings.
+
 ## Copyright & License
 
 Copyright (c) 2013-2014 Ghost Foundation - Released under the MIT License.
