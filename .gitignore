@@ -21,3 +21,5 @@ projectFilesBackup
 .DS_Store
 
 build
+assets/built
+assets/vendor

@@ -3,14 +3,14 @@ module.exports = function(grunt) {
     grunt.initConfig({
         paths: {
             scss: './assets/scss',
-            css: './assets/css'
+            built: './assets/built'
         },
         buildType: 'Build',
         pkg: grunt.file.readJSON('package.json'),
-        archive_name: grunt.option('name') || 'linen',
+        archive_name: grunt.option('name') || 'schneidseven',
 
         clean: {
-            pre: ['dist/', 'build/'],
+            pre: ['build/'],
             post: ['<%= archive_name %>.zip']
         },
 
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         },
 
         concat: {
-            'assets/js/build.js': [
+            '<%= paths.built %>/schneidseven.js': [
                 'assets/vendor/jquery/dist/jquery.js',
                 'assets/vendor/foundation/js/foundation.js',
                 'assets/js/jquery.fitvids.js',
@@ -55,13 +55,18 @@ module.exports = function(grunt) {
         },
 
         sass: {
-            admin: {
-                options : {
-                    // Only enable sourcemaps if you have Sass 3.3 installed.
-                    // sourcemap: true
-                },
+            build: {
                 files: {
-                    '<%= paths.css %>/style.css': '<%= paths.scss %>/app.scss'
+                    '<%= paths.built %>/style.css': '<%= paths.scss %>/app.scss'
+                }
+            }
+        },
+
+        // minify javascript file for production
+        uglify: {
+            build: {
+                files: {
+                    '<%= paths.built %>/schneidseven.min.js': '<%= paths.built %>/schneidseven.js'
                 }
             }
         },
@@ -79,8 +84,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['concat', 'sass:admin']);
-    grunt.registerTask('bundle', ['concat', 'clean:pre', 'copy:main', 'compress', 'copy:archive', 'clean:post']);
+    grunt.registerTask('default', ['concat', 'sass']);
+    grunt.registerTask('prod', ['concat', 'sass', 'uglify']);
+    grunt.registerTask('bundle', ['concat', 'sass', 'uglify', 'clean:pre', 'copy:main', 'compress', 'copy:archive', 'clean:post']);
 };
