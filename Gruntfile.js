@@ -62,6 +62,16 @@ module.exports = function(grunt) {
             }
         },
 
+        // command line tools
+        shell: {
+            bower: {
+                command: 'bower install',
+                options: {
+                    stdout: true
+                }
+            }
+        },
+
         // minify javascript file for production
         uglify: {
             build: {
@@ -83,11 +93,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-shell');
 
-    grunt.registerTask('default', ['concat', 'sass']);
-    grunt.registerTask('prod', ['concat', 'sass', 'uglify']);
-    grunt.registerTask('bundle', ['concat', 'sass', 'uglify', 'clean:pre', 'copy:main', 'compress', 'copy:archive', 'clean:post']);
+    grunt.registerTask('default', ['shell:bower', 'concat', 'sass']);
+    grunt.registerTask('prod', ['shell:bower', 'concat', 'sass', 'uglify']);
+    grunt.registerTask('bundle', ['shell:bower', 'concat', 'sass', 'uglify', 'clean:pre', 'copy:main', 'compress', 'copy:archive', 'clean:post']);
 };
