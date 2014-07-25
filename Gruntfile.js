@@ -30,6 +30,7 @@ module.exports = function(grunt) {
             '<%= paths.built %>/schneidseven.js': [
                 'assets/vendor/jquery/dist/jquery.js',
                 'assets/vendor/foundation/js/foundation.js',
+                'assets/vendor/highlightjs/highlight.pack.js',
                 'assets/js/jquery.fitvids.js',
                 'assets/js/index.js'
             ]
@@ -57,7 +58,10 @@ module.exports = function(grunt) {
         cssmin: {
             build: {
                 files: {
-                    '<%= paths.built %>/style.min.css': '<%= paths.built %>/style.css'
+                    '<%= paths.built %>/style.min.css': [
+                        '<%= paths.built %>/style.css',
+                        'assets/vendor/highlightjs/styles/github.css'
+                    ]
                 }
             }
         },

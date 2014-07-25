@@ -28,6 +28,8 @@
 
         $(document).foundation();
 
+        hljs.initHighlightingOnLoad();
+
     });
 
 }(jQuery));
